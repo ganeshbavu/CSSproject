@@ -1,0 +1,201 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #2a006e, #000);
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background-color: #ff00ff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    header h1 span {
+      color:black;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color:black;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.pinimg.com/280x280_RS/6e/55/e3/6e55e3f32df259ccd7a45a3c00111293.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      animation-name: ganesh;
+      animation-duration:1s;
+      animation-iteration-count:infinite;
+    }
+    @keyframes ganesh{
+        from{
+            background-position: center bottom;
+        }
+        to{
+            background-position: center top;
+        }
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #ff00ff, #ff4d4d);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 80px 80px 40px;
+      background: linear-gradient(180deg, #19003b, #000);
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+
+    .movie-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .movie-card {
+      background: #1c023e;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 220px;
+      transition: transform 0.3s;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 35px purple;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .movie-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .movie-info h4 {
+      margin-bottom: 10px;
+    }
+
+    .movie-info p {
+      font-size: 13px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .category-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .category-btn {
+      background: linear-gradient(90deg, #ff00ff, #ff4d4d);
+      border: none;
+      color: white;
+      padding: 12px 40px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .category-btn:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      background: #12022d;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .movie-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
