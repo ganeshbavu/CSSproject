@@ -3,20 +3,16 @@ import random
 import time
 import sys
 
-# ================================
-# DATABASE CONNECTION
-# ================================
+# Data base Connecting here
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Ganesh@123"   # change this
+    password="Ganesh@123" 
 )
 
 cursor = db.cursor()
 
-# ================================
-# DATABASE & TABLE SETUP
-# ================================
+# Table  creation here
 cursor.execute("CREATE DATABASE IF NOT EXISTS VehicleFireSafety")
 cursor.execute("USE VehicleFireSafety")
 
@@ -56,17 +52,13 @@ VALUES (1, 'Bus', 'AP-21-K-3456', 'RUNNING')
 
 db.commit()
 
-# ================================
-# SAFETY LIMITS
-# ================================
+# controling the limit and safety
 MAX_TEMP = 70
 MAX_GAS = 300
 MAX_SMOKE = 200
 VEHICLE_ID = 1
 
-# ================================
-# FUNCTIONS
-# ================================
+
 def log_sensor_data(temp, gas, smoke):
     cursor.execute("""
     INSERT INTO SensorData(vehicle_id, temperature, gas_level, smoke_level)
@@ -109,9 +101,7 @@ def check_fire_risk(temp, gas, smoke):
         raise_alert("Smoke detected – Possible fire")
         stop_vehicle()
 
-# ================================
-# MAIN LOOP
-# ================================
+#looping starts from here (main)
 print("🚍 Vehicle Fire Accident Prevention System Started")
 print("Status: RUNNING")
 print("Monitoring sensors...\n")
